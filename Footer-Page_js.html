@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript with HTML</title>
+    <style>
+        .parent{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+        .child1{
+            flex: 30%;
+          }
+        .child2{
+            flex: 70%;
+        }
+        .btn{
+            border: none;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <script>
+        //declaration
+        var jsheader='';
+
+        //Initialization
+        var jsheader_data = [
+            {
+                logo:'ait.jpg'
+            },
+            {
+                btn:'Corporate Training'
+            },
+            {
+                btn:'Placement Page'
+            },
+            {
+                btn:'Contact us'
+            },
+            {
+                btn:'Review'
+            },
+            {
+                btn:"Ratings"
+            }
+        ];
+
+        //Presentation
+            jsheader += `<div class="parent">
+        <div class="child1">
+            <img src="./${jsheader_data[0].logo}" alt="AchieversIT"/>
+            
+        </div>
+        <div class="child2">`
+            for(let j=1;j<jsheader_data.length;j++){
+                jsheader +=`<button class="btn"><a href="">${jsheader_data[j].btn}</a></button>`
+            }
+            jsheader +=`</div>`;
+            console.log(jsheader);
+
+            //appending into header portion
+            document.getElementsByTagName('header')[0].innerHTML=jsheader;
+    </script>
+</body>
+</html
